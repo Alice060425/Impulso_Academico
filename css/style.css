@@ -157,15 +157,6 @@ body{
 
 .beneficio-centro{
   grid-column:auto;
-  max-width:450px;
-  margin:0 auto;
-  background:rgba(255,255,255,0.18);
-  border:1px solid rgba(255,255,255,0.2);
-  padding:14px 18px;
-  border-radius:16px;
-  text-align:center;
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
 }
 
 .hero-final{
