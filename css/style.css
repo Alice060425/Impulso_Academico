@@ -91,30 +91,47 @@ body{
   justify-content:center;
   padding:110px 20px 90px;
   background:
-    linear-gradient(rgba(10,35,66,0.78), rgba(10,35,66,0.78)),
+    linear-gradient(rgba(10,35,66,0.88), rgba(10,35,66,0.88)),
     url("../img/hero.jpg") center/cover no-repeat;
   color:#fff;
   text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.18), rgba(0,0,0,0.05));
+  pointer-events:none;
 }
 
 .hero-content{
+  position:relative;
+  z-index:2;
   max-width:950px;
   width:100%;
   margin:0 auto;
 }
 
 .hero h1{
-  font-size:54px;
-  line-height:1.12;
-  margin:0 0 20px;
-  font-weight:700;
+  font-size:56px;
+  line-height:1.1;
+  margin:0 0 22px;
+  font-weight:800;
+  text-shadow:0 6px 24px rgba(0,0,0,0.45);
+  animation:fadeUp 0.8s ease;
 }
 
 .hero-sub{
   font-size:22px;
-  line-height:1.7;
+  line-height:1.75;
   max-width:860px;
-  margin:0 auto 30px;
+  margin:0 auto 32px;
+  opacity:0.97;
+  text-shadow:0 3px 16px rgba(0,0,0,0.35);
+  animation:fadeUp 1s ease;
 }
 
 .hero-beneficios{
@@ -125,54 +142,68 @@ body{
 }
 
 .beneficio{
-  background:rgba(255,255,255,0.10);
-  border:1px solid rgba(255,255,255,0.08);
-  backdrop-filter:blur(5px);
-  -webkit-backdrop-filter:blur(5px);
-  border-radius:16px;
-  padding:16px 18px;
+  background:rgba(255,255,255,0.14);
+  border:1px solid rgba(255,255,255,0.18);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-radius:18px;
+  padding:18px 20px;
   font-size:16px;
-  line-height:1.45;
-  box-shadow:0 10px 24px rgba(0,0,0,0.18);
+  line-height:1.5;
+  box-shadow:0 12px 30px rgba(0,0,0,0.22);
+  transition:all 0.3s ease;
+  animation:fadeUp 1.1s ease;
+}
+
+.beneficio:hover{
+  transform:translateY(-4px);
+  background:rgba(255,255,255,0.2);
+  box-shadow:0 18px 36px rgba(0,0,0,0.28);
 }
 
 .beneficio-centro{
   grid-column:1 / -1;
-  max-width:430px;
+  max-width:450px;
   margin:0 auto;
-  background:rgba(255,255,255,0.14);
-  border:1px solid rgba(255,255,255,0.10);
-  padding:13px 18px;
-  border-radius:14px;
+  background:rgba(255,255,255,0.18);
+  border:1px solid rgba(255,255,255,0.2);
+  padding:14px 18px;
+  border-radius:16px;
   text-align:center;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
 }
 
 .hero-final{
   font-size:22px;
   font-weight:700;
-  margin:30px 0 28px;
+  margin:32px 0 28px;
   line-height:1.5;
+  text-shadow:0 3px 16px rgba(0,0,0,0.35);
+  animation:fadeUp 1.2s ease;
 }
 
 .btn-hero,
 .btn{
   display:inline-block;
-  background:#2aa7ff;
+  background:linear-gradient(135deg, #2aa7ff, #00c6ff);
   color:#fff;
-  padding:14px 28px;
+  padding:15px 34px;
   border:none;
-  border-radius:10px;
+  border-radius:12px;
   text-decoration:none;
   font-weight:700;
-  transition:0.25s ease;
+  font-size:16px;
+  transition:all 0.3s ease;
   cursor:pointer;
-  box-shadow:0 8px 18px rgba(15, 84, 140, 0.28);
+  box-shadow:0 12px 28px rgba(0,0,0,0.28);
 }
 
 .btn-hero:hover,
 .btn:hover{
-  background:#1689d9;
-  transform:translateY(-2px);
+  transform:translateY(-3px) scale(1.04);
+  box-shadow:0 18px 38px rgba(0,0,0,0.35);
+  background:linear-gradient(135deg, #1898ef, #00b4e8);
 }
 
 .btn-hero{
@@ -345,6 +376,18 @@ body{
   font-size:15px;
 }
 
+/* ===== ANIMACIÓN ===== */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 /* ===== TABLET ===== */
 @media (max-width: 992px){
   .hero h1{
@@ -397,26 +440,26 @@ body{
   }
 
   .hero h1{
-    font-size:30px;
+    font-size:34px;
     line-height:1.18;
     margin-bottom:18px;
   }
 
   .hero-sub{
-    font-size:15px;
+    font-size:16px;
     line-height:1.7;
-    margin-bottom:22px;
+    margin-bottom:24px;
   }
 
   .hero-beneficios{
     grid-template-columns:1fr;
-    gap:12px;
-    margin:20px 0 24px;
+    gap:14px;
+    margin:22px 0 26px;
   }
 
   .beneficio{
     font-size:15px;
-    padding:14px;
+    padding:15px;
     text-align:left;
   }
 
@@ -426,14 +469,14 @@ body{
   }
 
   .hero-final{
-    font-size:16px;
-    margin:20px 0 22px;
+    font-size:17px;
+    margin:22px 0 24px;
   }
 
   .btn-hero,
   .btn{
     font-size:15px;
-    padding:12px 22px;
+    padding:13px 24px;
   }
 
   .cards{
@@ -445,7 +488,7 @@ body{
     max-width:340px;
   }
 
-  /* Redes premium en móvil: solo iconos */
+  /* Redes más limpias en móvil */
   .social-float{
     right:10px;
     bottom:12px;
