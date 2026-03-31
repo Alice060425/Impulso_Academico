@@ -136,9 +136,10 @@ body{
 
 .hero-beneficios{
   display:grid;
-  grid-template-columns:repeat(2, minmax(260px, 1fr));
-  gap:18px;
+  grid-template-columns:repeat(2, 1fr);
+  gap:20px;
   margin:30px 0;
+  aling-items: stretch;
 }
 
 .beneficio{
@@ -162,7 +163,7 @@ body{
 }
 
 .beneficio-centro{
-  grid-column:1 / -1;
+  grid-column:auto;
   max-width:450px;
   margin:0 auto;
   background:rgba(255,255,255,0.18);
