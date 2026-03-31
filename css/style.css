@@ -137,16 +137,28 @@ body{
 .hero-beneficios{
   display:grid;
   grid-template-columns:repeat(2, 1fr);
-  gap:20px;
+  gap:18px;
   margin:30px 0;
-  aling-items: stretch;
+  max-width:900px;
+  margin-right:auto;
 }
 
 .beneficio{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  background:rgba(255,255,255,0.14);
+  border:1px solid rgba(255,255,255,0.18);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-radius:18px;
+  padding:18px 20px;
+  font-size:16px;
+  line-height:1.5;
+  box-shadow:0 12px 30px rgba(0,0,0,0.22);
+  transition:all 0.3s ease;
+  text-align:center;
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .beneficio:hover{
@@ -157,8 +169,8 @@ body{
 
 .beneficio-centro{
   grid-column:auto;
-  max-width:450px;
-  margin:0 auto;
+  max-width:100%;
+  margin:0;
   background:rgba(255,255,255,0.18);
   border:1px solid rgba(255,255,255,0.2);
   padding:14px 18px;
